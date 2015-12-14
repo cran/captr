@@ -10,17 +10,17 @@
 #' upload_image("batch_id", "path_to_image")
 #' }
 
-upload_image <- function(batch_id="", path_to_image="")
-{
-    app_token = getOption("CaptricityToken")
-    if( is.null(app_token)) stop("Please set application token using set_token('app_token').")
+upload_image <- function(batch_id="", path_to_image="") {
     
-    if ( is.null(batch_id) | batch_id=="") stop("Provide a Valid Batch ID.")
-    if ( is.null(path_to_image) | path_to_image=="") stop("Provide a Valid Path To Image.")
+    captr_CHECKAUTH()
+ 
+    if ( is.null(batch_id) | identical(batch_id, "")) stop("Provide a Valid Batch ID.")
+        
+    if (!file.exists(path_to_image)) stop("File Doesn't Exist. Please check the path.")
 
     h <- new_handle()
     handle_setopt(h,  customrequest = "POST")
-    handle_setheaders(h, "Captricity-API-Token" = app_token)
+    handle_setheaders(h, "Captricity-API-Token" = Sys.getenv('CaptricityToken'))
     handle_setform(h, uploaded_file = form_file(path_to_image))
 
     tag_con    <- curl_fetch_memory(paste0("https://shreddr.captricity.com/api/v1/batch/", batch_id, "/batch-file/"), handle=h)

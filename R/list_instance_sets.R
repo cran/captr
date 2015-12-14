@@ -10,16 +10,15 @@
 #' list_instance_sets(job_id = "job_id")
 #' }
 
-list_instance_sets <- function(job_id="")
-{
-    app_token = getOption("CaptricityToken")
-    if( is.null(app_token)) stop("Please set application token using set_token('app_token').")
+list_instance_sets <- function(job_id="") {
     
-    if ( is.null(job_id) | job_id=="") stop("Provide a Valid Job ID.")
+    captr_CHECKAUTH()
+ 
+    if ( is.null(job_id) | identical(job_id, "")) stop("Provide a Valid Job ID.")
 
     h <- new_handle()
     handle_setopt(h,  customrequest = "GET")
-    handle_setheaders(h, "Captricity-API-Token" = app_token)
+    handle_setheaders(h, "Captricity-API-Token" = Sys.getenv('CaptricityToken'))
 
     tag_con    <- curl_fetch_memory(paste0("https://shreddr.captricity.com/api/v1/job/", job_id, "/instance-set/"), handle=h)
     tag        <- fromJSON(rawToChar(tag_con$content))
