@@ -7,7 +7,10 @@
 create_batch(batch_name = "")
 }
 \arguments{
-\item{batch_name}{name of the batch}
+\item{batch_name}{name of the batch; Required; character}
+}
+\value{
+List of length 26. Includes information like created_by, user_id, etc.
 }
 \description{
 Create a new batch.
@@ -18,6 +21,6 @@ create_batch(batch_name="name_of_batch")
 }
 }
 \references{
-\url{https://shreddr.captricity.com/developer/}
+\url{https://shreddr.captricity.com/developer/api-reference/#v1-batch}
 }
 
