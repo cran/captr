@@ -1,3 +1,9 @@
+version .1.5 2016-2-27
+--------------------
+1. Abstracted simple GET
+2. More cats for functions
+3. Support for delete_batch, delete_job
+
 version .1.4 2016-1-20
 --------------------
 1. More unit tests
