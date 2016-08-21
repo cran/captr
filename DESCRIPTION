@@ -1,6 +1,6 @@
 Package: captr
 Title: Client for the Captricity API
-Version: 0.1.5
+Version: 0.2.0
 Authors@R: person("Gaurav", "Sood", email = "gsood07@gmail.com", role = c("aut", "cre"))
 Maintainer: Gaurav Sood <gsood07@gmail.com>
 Description: Get text from images of text using Captricity Optical Character
@@ -18,7 +18,7 @@ Imports: curl, jsonlite
 Suggests: testthat, rmarkdown, knitr (>= 1.11)
 RoxygenNote: 5.0.1
 NeedsCompilation: no
-Packaged: 2016-02-28 17:27:56 UTC; gaurav
+Packaged: 2016-08-20 22:58:02 UTC; gsood
 Author: Gaurav Sood [aut, cre]
 Repository: CRAN
-Date/Publication: 2016-02-29 01:12:56
+Date/Publication: 2016-08-21 10:55:56
