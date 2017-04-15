@@ -4,7 +4,7 @@
 \alias{batch_price}
 \title{Price of a Batch}
 \usage{
-batch_price(batch_id = "", ...)
+batch_price(batch_id = NULL, ...)
 }
 \arguments{
 \item{batch_id}{ID for the batch; Required; String.}
@@ -25,4 +25,3 @@ batch_price("batch_id")
 \references{
 \url{https://shreddr.captricity.com/developer/}
 }
-

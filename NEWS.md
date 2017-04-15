@@ -1,3 +1,12 @@
+# captr 0.3.0 
+
+* Make returns visible
+* Improved documentation 
+* Support the dots for list_jobs()
+* extensive linting 
+* removed superfluous captr_CHECKAUTH() from a few functions
+* abstracted out captr_DELETE
+
 # captr 0.2.0
 
 * Using new abstract GET/POST functions: create_batch, get_batch_details, batch_price, list_batch_files, etc.

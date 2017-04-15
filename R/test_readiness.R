@@ -13,14 +13,13 @@
 #' }
 
 test_readiness <- function(batch_id="", ...) {
-    
-    captr_CHECKAUTH()
- 
-    if ( is.null(batch_id) | identical(batch_id, "")) stop("Provide a Valid Batch ID.")
 
-    res <- captr_GET(paste0("batch/", batch_id, "/readiness"), ...)
+  captr_CHECKAUTH()
 
-    return(invisible(res))
+  if ( is.null(batch_id) | identical(batch_id, "")) stop("Provide a Valid Batch ID.")
+
+  res <- captr_GET(paste0("batch/", batch_id, "/readiness"), ...)
+
+  res
 
 }
-

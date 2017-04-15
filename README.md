@@ -106,3 +106,6 @@ get_all(job_id="job_id")
 ### License
 Scripts are released under the [MIT License](https://opensource.org/licenses/MIT).
 
+### Contributor Code of Conduct
+
+The project welcomes contributions from everyone! In fact, it depends on it. To maintain this welcoming atmosphere, and to collaborate in a fun and productive way, we expect contributors to the project to abide by the [Contributor Code of Conduct](http://contributor-covenant.org/version/1/0/0/).

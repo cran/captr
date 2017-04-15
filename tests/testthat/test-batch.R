@@ -2,7 +2,7 @@ context("Create Batch")
 
 test_that("batch creation happens successfully", {
   skip_on_cran()
-  
+
   token_file <- file("captr_key", "r")
   token <- suppressWarnings(readLines(token_file))
   close(token_file)
@@ -10,8 +10,8 @@ test_that("batch creation happens successfully", {
   set_token(token)
   batch <- create_batch("new_batch")
   expect_that(batch, is_a("list"))
- 
-  expect_error(create_batch(""), "Specify a valid batch_name.", fixed=TRUE)
+
+  expect_error(create_batch(""), "Specify a valid batch_name.", fixed = TRUE)
 
   l_batches <- list_batches()
   expect_that(l_batches, is_a("data.frame"))
@@ -31,8 +31,8 @@ test_that("batch creation happens successfully", {
   expect_that(u_file$uuid, is_a("character"))
 
   t_id <- get_template_id()
-  expect_that(t_id, is_a("list"))
-  
+  expect_that(t_id, is_a("data.frame"))
+
   ready <- test_readiness(batch$id)
   expect_equal(length(ready$errors) > 1, TRUE)
 
@@ -41,6 +41,5 @@ test_that("batch creation happens successfully", {
 
   del <- delete_batch(batch$id)
   expect_that(del, is_a("list"))
-
 
 })

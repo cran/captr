@@ -4,7 +4,10 @@
 \alias{list_jobs}
 \title{List Jobs}
 \usage{
-list_jobs()
+list_jobs(...)
+}
+\arguments{
+\item{\dots}{Additional arguments passed to \code{\link{captr_GET}}.}
 }
 \description{
 A list of jobs owned by the calling account.
@@ -17,4 +20,3 @@ list_jobs()
 \references{
 \url{https://shreddr.captricity.com/developer/api-reference/#v1-jobs}
 }
-
